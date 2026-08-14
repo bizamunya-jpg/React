@@ -1,38 +1,83 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  /* App.css */
+  
+  * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #0a0000;
   }
-  to {
-    transform: rotate(360deg);
+  /* Main App */
+  
+  .App {
+      min-height: 100vh;
   }
-}
+  /* Header */
+  
+  header {
+      background-color: #172f78;
+      color: white;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  header h1 {
+      font-size: 28px;
+  }
+  /* Student Card */
+  
+  .student-card {
+      width: 350px;
+      margin: 40px auto;
+      padding: 25px;
+      background-color: rgb(195, 166, 166);
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .student-card p {
+      font-size: 17px;
+      margin-bottom: 12px;
+  }
+  /* Student Name */
+  
+  .student-card p:first-child {
+      font-size: 22px;
+      font-weight: bold;
+      color: #1e3a8a;
+  }
+  /* Pass / Fail */
+  
+  .pass {
+      color: green;
+      font-weight: bold;
+      font-size: 18px;
+  }
+  
+  .fail {
+      color: red;
+      font-weight: bold;
+      font-size: 18px;
+  }
+  /* Button */
+  
+  .student-card button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 6px;
+      background-color: #1e3a8a;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+  }
+  
+  .student-card button:hover {
+      background-color: #2563eb;
+  }
