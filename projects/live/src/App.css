@@ -1,38 +1,14 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+:root { --ink: #192a35; --muted: #657680; --line: #dbe4e7; --paper: #fff; --canvas: #f2f6f5; --teal: #007e79; --teal-dark: #00645f; --orange: #b85b05; --orange-soft: #fff1e4; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--canvas); color: var(--ink); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+button, textarea { font: inherit; } button { cursor: pointer; }
+.monitor { max-width: 1180px; margin: 0 auto; padding: 42px 28px 56px; }
+.topbar, .panel-heading, .device-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.topbar { margin-bottom: 32px; }.eyebrow { margin: 0 0 6px; color: var(--teal); font-size: .78rem; font-weight: 750; text-transform: uppercase; } h1, h2, p { margin-top: 0; } h1 { margin-bottom: 0; font-size: 2rem; } h2 { margin-bottom: 5px; font-size: 1.1rem; }
+.pause-button, .start-button, .note-button { border: 1px solid var(--teal); border-radius: 5px; background: var(--teal); color: #fff; font-weight: 700; padding: 10px 14px; }.pause-button { background: var(--paper); color: var(--teal-dark); }.pause-button:hover { background: #e6f4f2; }.start-button:hover, .note-button:hover { background: var(--teal-dark); }
+.summary { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 22px; }.summary article, .devices-panel, .notes-panel { background: var(--paper); border: 1px solid var(--line); border-radius: 7px; }.summary article { min-height: 108px; padding: 18px; display: flex; flex-direction: column; justify-content: space-between; }.summary span, .panel-heading p, label, .device-details span, .activity-count { color: var(--muted); font-size: .86rem; }.summary strong { font-size: 1.6rem; }.good { color: var(--teal); }.warn { color: var(--orange); }.muted { color: var(--muted); }
+.workspace { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(290px, .9fr); gap: 22px; align-items: start; }.devices-panel, .notes-panel { padding: 22px; }.panel-heading { align-items: flex-start; border-bottom: 1px solid var(--line); padding-bottom: 17px; }.panel-heading p { margin-bottom: 0; }.live-badge, .paused-badge, .status { border-radius: 999px; font-size: .75rem; font-weight: 750; padding: 5px 9px; white-space: nowrap; }.live-badge, .status.online { background: #e2f4ef; color: #087169; }.paused-badge { background: #edf0f1; color: #59666d; }.status.attention { background: var(--orange-soft); color: var(--orange); }
+.device-list, .notes-list { list-style: none; margin: 0; padding: 0; }.device-row { padding: 18px 0; border-bottom: 1px solid var(--line); }.device-row:last-child { border-bottom: 0; padding-bottom: 0; }.device-indicator { width: 10px; height: 10px; border-radius: 50%; background: var(--teal); flex: 0 0 auto; }.device-details { display: grid; gap: 3px; flex: 1; }.device-details strong { font-size: .95rem; }.activity-count { width: 70px; text-align: right; }
+form { display: grid; gap: 8px; margin-top: 20px; } label { font-weight: 700; } textarea { width: 100%; resize: vertical; border: 1px solid #b9c7cc; border-radius: 5px; padding: 10px; color: var(--ink); line-height: 1.4; } textarea:focus { border-color: var(--teal); outline: 2px solid #bde5e1; }.note-button { justify-self: start; }.empty-state { margin: 28px 0 0; color: var(--muted); font-size: .9rem; }.notes-list { margin-top: 22px; display: grid; gap: 10px; }.notes-list li { border-left: 3px solid #8fcfc8; background: #f5faf9; padding: 10px 12px; }.notes-list p { margin-bottom: 6px; font-size: .9rem; } time { color: var(--muted); font-size: .78rem; }
+@media (max-width: 760px) { .monitor { padding: 26px 16px 40px; }.topbar { align-items: flex-start; flex-direction: column; }.summary { grid-template-columns: repeat(2, 1fr); }.workspace { grid-template-columns: 1fr; }.device-row { align-items: flex-start; flex-wrap: wrap; }.device-details { min-width: 150px; }.activity-count { margin-left: 30px; text-align: left; width: auto; } }
+@media (max-width: 420px) { .summary { grid-template-columns: 1fr; } h1 { font-size: 1.7rem; } }

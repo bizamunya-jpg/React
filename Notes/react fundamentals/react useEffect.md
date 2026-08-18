@@ -1,5 +1,6 @@
 # React: useEffect 
 - useEffect lets a component do something when certain values change or when the component first appers
+- hence use effect runs code because something happened during rendering, usually after the component renders
 - for example ,imagine our Game Library needs to save or load information 
 first we import it 
 ```JavaScript
@@ -52,4 +53,10 @@ useEffect(() => {
 }, []);
 
 ```
-- This prevents thhings like timers and subscriptions continuing when they're no longer needed
+- This prevents things like timers and subscriptions continuing when they're no longer needed
+
+# useState
+- stores data that can change
+
+- mental model of useEffect:
+# Render => Effect Runs => Fetch Data => State Update => React Re-renders
