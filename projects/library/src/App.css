@@ -1,59 +1,74 @@
 :root {
-  --ink: #17232b;
-  --muted: #64727a;
-  --canvas: #edf3f2;
-  --surface: #ffffff;
-  --line: #d3dfdf;
-  --primary: #087a71;
-  --primary-dark: #05635c;
-  --danger: #a33d34;
+  --black: #0b0b0d;
+  --panel: #17171b;
+  --panel-raised: #202025;
+  --line: #39393f;
+  --text: #f5f1f1;
+  --muted: #aaa3a6;
+  --red: #d72638;
+  --red-dark: #a91829;
+  --red-soft: #351519;
 }
 
 * {
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--black);
+  color: var(--text);
+}
+
 #root > div > div {
-  width: min(760px, calc(100% - 32px));
-  margin: 48px auto;
+  width: min(820px, calc(100% - 32px));
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 58px 0;
 }
 
 h1 {
-  margin: 0 0 24px;
-  color: var(--ink);
-  font-size: 2rem;
+  margin: 0 0 26px;
+  color: var(--text);
+  font-size: 2.2rem;
   letter-spacing: 0;
 }
 
 form {
   display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) 92px auto;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr) 94px auto;
   gap: 10px;
-  margin-bottom: 18px;
+  margin-bottom: 22px;
   padding: 16px;
   border: 1px solid var(--line);
-  border-radius: 7px;
-  background: var(--surface);
+  border-left: 4px solid var(--red);
+  border-radius: 6px;
+  background: var(--panel);
 }
 
 input {
   min-width: 0;
-  border: 1px solid #b9c9cb;
+  border: 1px solid #49494f;
   border-radius: 4px;
-  background: #fff;
-  color: var(--ink);
+  background: #0f0f12;
+  color: var(--text);
   padding: 10px 11px;
 }
 
+input::placeholder {
+  color: #817a7e;
+}
+
 input:focus {
-  border-color: var(--primary);
-  outline: 2px solid #bce6e0;
+  border-color: var(--red);
+  outline: 2px solid #6b202a;
 }
 
 button {
-  border: 1px solid var(--primary);
+  border: 1px solid var(--red);
   border-radius: 4px;
-  background: var(--primary);
+  background: var(--red);
   color: #fff;
   cursor: pointer;
   font: inherit;
@@ -62,11 +77,12 @@ button {
 }
 
 button:hover {
-  background: var(--primary-dark);
+  background: var(--red-dark);
+  border-color: var(--red-dark);
 }
 
 #root > div > div > p {
-  margin: 24px 0;
+  margin: 28px 0;
   color: var(--muted);
 }
 
@@ -75,18 +91,23 @@ button:hover {
   grid-template-columns: 1fr auto;
   column-gap: 18px;
   align-items: center;
-  margin-top: 10px;
-  padding: 18px;
+  margin-top: 11px;
+  padding: 20px;
   border: 1px solid var(--line);
-  border-radius: 7px;
-  background: var(--surface);
+  border-radius: 6px;
+  background: var(--panel);
+}
+
+#root > div > div > div:hover {
+  border-color: #6a3138;
+  background: var(--panel-raised);
 }
 
 #root > div > div > div h2 {
   grid-column: 1;
   margin: 0 0 12px;
-  color: var(--ink);
-  font-size: 1.1rem;
+  color: var(--text);
+  font-size: 1.14rem;
   letter-spacing: 0;
 }
 
@@ -101,28 +122,27 @@ button:hover {
   grid-column: 2;
   grid-row: 1 / span 3;
   align-self: center;
-  border-color: #c56d66;
-  background: #fff;
-  color: var(--danger);
+  border-color: #71323a;
+  background: transparent;
+  color: #f29ca5;
 }
 
 #root > div > div > div button:hover {
-  background: #fff0ef;
+  border-color: var(--red);
+  background: var(--red-soft);
+  color: #fff;
 }
 
-@media (max-width: 620px) {
+@media (max-width: 650px) {
   #root > div > div {
-    margin-top: 28px;
+    padding: 32px 0 48px;
   }
 
   form {
     grid-template-columns: 1fr 1fr;
   }
 
-  form input:first-child {
-    grid-column: 1 / -1;
-  }
-
+  form input:first-child,
   form button {
     grid-column: 1 / -1;
   }

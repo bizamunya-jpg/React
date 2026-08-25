@@ -1,0 +1,120 @@
+/* Navigation Styles */
+
+.navigation {
+    background: linear-gradient(135deg, rgba(20, 17, 20, 0.98), rgba(34, 24, 28, 0.98));
+    border-bottom: 2px solid rgba(217, 34, 56, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(7px);
+}
+
+.nav-container {
+    width: min(1200px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-logo:hover {
+    color: #d92238;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    color: #fffafa;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.nav-link:hover {
+    background: rgba(217, 34, 56, 0.2);
+    color: #d92238;
+}
+
+.nav-link.active {
+    background: #d92238;
+    color: #fff;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #fffafa;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 12px;
+    }
+    .hamburger {
+        display: flex;
+    }
+    .nav-menu {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: rgba(20, 17, 20, 0.98);
+        padding: 16px 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        gap: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .nav-menu.active {
+        max-height: 400px;
+    }
+    .nav-link {
+        padding: 12px 20px;
+        border-radius: 0;
+        border-left: 4px solid transparent;
+    }
+    .nav-link.active {
+        border-left-color: #d92238;
+        background: rgba(217, 34, 56, 0.1);
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+    .nav-container {
+        height: 60px;
+    }
+}
