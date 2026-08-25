@@ -2,10 +2,8 @@ import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { MovieProvider } from './context/MovieContext';
 import './App.css';
-import Dashboard from './pages/Dashboard';
 
 // Lazy load page components (Code Splitting)
-const Movies = lazy(() => import('./pages/Dashboard'));
 const HomePage = lazy(() => import('./pages/HomePage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const TvSeriesPage = lazy(() => import('./pages/TvSeriesPage'));
@@ -72,7 +70,6 @@ function App() {
             <Navigation />
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/movies" element={<Dashboard />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/tv-series" element={<TvSeriesPage />} />
               <Route path="/cartoons" element={<CartoonsPage />} />

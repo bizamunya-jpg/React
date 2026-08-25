@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { getGenres, POSTER_BASE_URL, searchMovies } from '../config/api';
+import { POSTER_BASE_URL, searchMovies } from '../config/api';
 import { MovieContext } from '../context/MovieContext';
 import '../styles/HomePage.css';
 
@@ -11,22 +11,6 @@ function HomePage() {
     const [apiSearchQuery, setApiSearchQuery] = useState('');
     const [apiSearchResults, setApiSearchResults] = useState([]);
     const [apiIsLoading, setApiIsLoading] = useState(false);
-    const [genres, setGenres] = useState([]);
-
-    // Fetch genres on component mount
-    React.useEffect(() => {
-        const fetchGenres = async () => {
-            try {
-                const genreData = await getGenres();
-                setGenres(genreData || []);
-            } catch (error) {
-                console.error('Failed to fetch genres:', error);
-                setGenres([]);
-            }
-        };
-        fetchGenres();
-    }, []);
-
     // Handle API search for movies
     async function handleApiSearch() {
         if (!apiSearchQuery.trim()) return;
