@@ -17,11 +17,11 @@ function AboutPage() {
                                     <h2> Features </h2>
                                      <ul>
         <li> Search for movies from a vast database </li> 
-        <li> 🎬Create and manage your personal movie collection </li> 
-        <li> ⭐View ratings and detailed information </li> 
-        <li> 📊Explore top - rated movies on the Dashboard </li> 
-        <li > 📱Fully responsive design for all devices </li> 
-        <li> 🚀Lightning - fast performance with code splitting </li> 
+        <li> Create and manage your personal movie collection </li> 
+        <li> View ratings and detailed information </li> 
+        <li> Explore top - rated movies on the Dashboard </li> 
+        <li > Fully responsive design for all devices </li> 
+        <li> Lightning - fast performance with code splitting </li> 
         </ul> 
         </div>
 

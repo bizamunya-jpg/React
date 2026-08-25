@@ -4,7 +4,7 @@ import { MovieProvider } from './context/MovieContext';
 import './App.css';
 
 // Lazy load page components (Code Splitting)
-const Dashboard = lazy(() => import('./pages/Dashboard'));
+const Dashboard = lazy(() => import('./pages/Movies'));
 const HomePage = lazy(() => import('./pages/HomePage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const TvSeriesPage = lazy(() => import('./pages/TvSeriesPage'));
@@ -30,7 +30,7 @@ function App() {
           <Navigation />
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/Movie" element={<Movies />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/tv-series" element={<TvSeriesPage />} />
             <Route path="/cartoons" element={<CartoonsPage />} />
